@@ -1,35 +1,368 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<title>My Baldi Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baldi’s Basics: Definitive Mode</title>
+
+    <!-- ======================
+         GitHub-style Dark Theme
+    ======================= -->
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --accent: #2f81f7;
+            --accent-glow: rgba(47,129,247,0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.25s ease;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        /* ======================
+           Header / Hero
+        ======================= */
+        header {
+            border-bottom: 1px solid var(--border);
+            background: #010409;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .title h1 {
+            font-size: 28px;
+        }
+
+        .title p {
+            color: var(--muted);
+        }
+
+        /* ======================
+           Navigation
+        ======================= */
+        nav {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            position: relative;
+        }
+
+        /* Smooth underline animation */
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ======================
+           Section Titles
+        ======================= */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        /* ======================
+           Cards (GitHub style)
+        ======================= */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.25s ease;
+        }
+
+        /* Hover lift effect */
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        /* ======================
+           Features Grid
+        ======================= */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* ======================
+           Screenshot Gallery
+        ======================= */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        /* ======================
+           Download Button
+        ======================= */
+        .download-btn {
+            display: inline-block;
+            padding: 14px 26px;
+            background: var(--accent);
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            transition: 0.25s ease;
+        }
+
+        /* Glow + scale */
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* ======================
+           Changelog
+        ======================= */
+        .changelog ul {
+            list-style: none;
+        }
+
+        .changelog li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        /* ======================
+           Footer
+        ======================= */
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 25px 0;
+            color: var(--muted);
+            margin-top: 40px;
+        }
+
+        /* ======================
+           Responsive
+        ======================= */
+        @media (max-width: 600px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .title h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
+<body>
 
-<body style="background-color: lightyellow; text-align: center; font-family: Arial;">
+<!-- ======================
+     Header Section
+====================== -->
+<header>
+    <div class="container hero">
+        <div class="logo">
+            LOGO
+        </div>
+        <div class="title">
+            <h1>Baldi’s Basics: Definitive Mode</h1>
+            <p>Community remaster • Fan project • GitHub-style release page</p>
+        </div>
+    </div>
+</header>
 
-<h1>My Baldi Fan Game</h1>
+<!-- ======================
+     Navigation Bar
+====================== -->
+<nav>
+    <div class="container nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+        <a href="#changelog">Changelog</a>
+        <a href="#credits">Credits</a>
+    </div>
+</nav>
 
-<h2>Menu</h2>
+<!-- ======================
+     About Section
+====================== -->
+<section id="about" class="container">
+    <h2>About the Game</h2>
+    <div class="card">
+        <p>
+            Baldi’s Basics: Definitive Mode is a polished and expanded fan experience
+            that enhances the original gameplay with improved visuals, new content,
+            performance optimizations, and quality-of-life upgrades.
+        </p>
+        <p style="margin-top:10px; color: var(--muted);">
+            Built for players who want the classic chaos of Baldi — but smoother, cleaner,
+            and more complete.
+        </p>
+    </div>
+</section>
 
-<button onclick="location.href='#download'">Download</button> <button onclick="location.href='#about'">About</button> <button onclick="location.href='#credits'">Credits</button>
+<!-- ======================
+     Features Section
+====================== -->
+<section id="features" class="container">
+    <h2>Features</h2>
+    <div class="grid">
+        <div class="card">Enhanced graphics and lighting</div>
+        <div class="card">New game modes and challenges</div>
+        <div class="card">Optimized performance</div>
+        <div class="card">Additional characters and events</div>
+        <div class="card">Improved UI and menus</div>
+        <div class="card">Ongoing updates and support</div>
+    </div>
+</section>
 
-<hr>
+<!-- ======================
+     Screenshots Section
+====================== -->
+<section id="screenshots" class="container">
+    <h2>Screenshots</h2>
+    <div class="gallery">
+        <div class="card"><img src="https://via.placeholder.com/600x350?text=Screenshot+1"></div>
+        <div class="card"><img src="https://via.placeholder.com/600x350?text=Screenshot+2"></div>
+        <div class="card"><img src="https://via.placeholder.com/600x350?text=Screenshot+3"></div>
+    </div>
+</section>
 
-<h2 id="download">Download</h2>
-<p>Download the game here:</p>
-<a href="#">(Put your download link here later)</a>
+<!-- ======================
+     Download Section
+====================== -->
+<section id="download" class="container">
+    <h2>Download</h2>
+    <div class="card" style="text-align:center;">
+        <p style="margin-bottom:20px;">Latest Version: v1.0.0</p>
+        <a href="#" class="download-btn">Download Now</a>
+    </div>
+</section>
 
-<hr>
+<!-- ======================
+     Changelog Section
+====================== -->
+<section id="changelog" class="container changelog">
+    <h2>Version / Changelog</h2>
+    <div class="card">
+        <ul>
+            <li><strong>v1.0.0</strong> — Initial Definitive Release</li>
+            <li>• Visual improvements and UI overhaul</li>
+            <li>• Added new gameplay features</li>
+            <li>• Performance optimizations</li>
+            <li>• Bug fixes and stability updates</li>
+        </ul>
+    </div>
+</section>
 
-<h2 id="about">About</h2>
-<p>This is a Baldi-style game I made.</p>
+<!-- ======================
+     Credits Section
+====================== -->
+<section id="credits" class="container">
+    <h2>Credits</h2>
+    <div class="card">
+        <p>Project Creator: Your Name</p>
+        <p style="color: var(--muted); margin-top:6px;">
+            Inspired by the original Baldi’s Basics by Mystman12.
+        </p>
+    </div>
+</section>
 
-<hr>
+<!-- ======================
+     Footer
+====================== -->
+<footer>
+    © 2026 Baldi’s Basics: Definitive Mode • Fan Project • Not affiliated with the original creators
+</footer>
 
-<h2 id="credits">Credits</h2>
-<p>Game by: Your Name</p>
-<p>Music by: You</p>
-<p>Inspired by Baldi's Basics</p>
+<!-- ======================
+     Smooth Scroll JS
+====================== -->
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href'))
+                .scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 
 </body>
 </html>

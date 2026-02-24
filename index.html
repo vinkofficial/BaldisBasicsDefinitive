@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +7,6 @@
 
 <style>
 :root {
-    /* Dark Green Theme */
     --bg: #0f1a14;
     --card: #0b2417;
     --border: #1f3a2b;
@@ -32,12 +30,12 @@ body {
     line-height: 1.6;
 }
 
-/* Floating Baldi Head */
+/* Floating Head */
 .baldi-head {
     position: fixed;
     top: 15px;
     right: 15px;
-    width: 80px;
+    width: 120px;
     z-index: 999;
     animation: float 3s ease-in-out infinite;
     pointer-events: none;
@@ -45,7 +43,7 @@ body {
 
 @keyframes float {
     0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-10px); }
 }
 
 a {
@@ -66,7 +64,6 @@ img {
     padding: 40px 0;
 }
 
-/* Header */
 header {
     border-bottom: 1px solid var(--border);
     background: #08150f;
@@ -100,7 +97,6 @@ header {
     color: var(--muted);
 }
 
-/* Navigation */
 nav {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -138,13 +134,11 @@ nav {
     width: 100%;
 }
 
-/* Sections */
 h2 {
     margin-bottom: 20px;
     font-size: 22px;
 }
 
-/* Cards */
 .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -158,21 +152,18 @@ h2 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
-/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
-/* Download Button */
 .download-btn {
     display: inline-block;
     padding: 14px 26px;
@@ -189,7 +180,6 @@ h2 {
     background: var(--accent);
 }
 
-/* Changelog */
 .changelog ul {
     list-style: none;
 }
@@ -199,7 +189,6 @@ h2 {
     color: var(--muted);
 }
 
-/* Footer */
 footer {
     border-top: 1px solid var(--border);
     text-align: center;
@@ -208,7 +197,6 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
     .hero {
         flex-direction: column;
@@ -220,13 +208,10 @@ footer {
     }
 }
 </style>
-
 </head>
 <body>
 
-<!-- Floating Baldi Head (Replace image if you want your own PNG) -->
-
-<img class="baldi-head" src="https://i.imgur.com/6QZ7Z6I.png" alt="Baldi">
+<img class="baldi-head" src="baldi.png" alt="Baldi">
 
 <header>
     <div class="container hero">
@@ -249,60 +234,11 @@ footer {
     </div>
 </nav>
 
-<section id="about" class="container">
-    <h2>About the Game</h2>
-    <div class="card">
-        <p>
-            Baldi’s Basics: Definitive Mode is a polished and expanded fan experience
-            that enhances the original gameplay with improved visuals, new content,
-            performance optimizations, and quality-of-life upgrades.
-        </p>
-        <p style="margin-top:10px; color: var(--muted);">
-            Built for players who want the classic chaos of Baldi — but smoother, cleaner,
-            and more complete.
-        </p>
-    </div>
-</section>
-
-<section id="features" class="container">
-    <h2>Features</h2>
-    <div class="grid">
-        <div class="card">Enhanced graphics and lighting</div>
-        <div class="card">New game modes and challenges</div>
-        <div class="card">Optimized performance</div>
-        <div class="card">Additional characters and events</div>
-        <div class="card">Improved UI and menus</div>
-        <div class="card">Ongoing updates and support</div>
-    </div>
-</section>
-
-<section id="screenshots" class="container">
-    <h2>Screenshots</h2>
-    <div class="gallery">
-        <div class="card"><img src="https://via.placeholder.com/600x350?text=Screenshot+1"></div>
-        <div class="card"><img src="https://via.placeholder.com/600x350?text=Screenshot+2"></div>
-        <div class="card"><img src="https://via.placeholder.com/600x350?text=Screenshot+3"></div>
-    </div>
-</section>
-
 <section id="download" class="container">
     <h2>Download</h2>
     <div class="card" style="text-align:center;">
         <p style="margin-bottom:20px;">Latest Version: v1.0.0</p>
-        <a href="#" class="download-btn">Download Now</a>
-    </div>
-</section>
-
-<section id="changelog" class="container changelog">
-    <h2>Version / Changelog</h2>
-    <div class="card">
-        <ul>
-            <li><strong>v1.0.0</strong> — Initial Definitive Release</li>
-            <li>• Visual improvements and UI overhaul</li>
-            <li>• Added new gameplay features</li>
-            <li>• Performance optimizations</li>
-            <li>• Bug fixes and stability updates</li>
-        </ul>
+        <a href="thanks.html" class="download-btn">Download Now</a>
     </div>
 </section>
 
@@ -311,25 +247,12 @@ footer {
     <div class="card">
         <p><strong>Game:</strong> Glider, 333DEV</p>
         <p><strong>Website:</strong> VINKGT</p>
-        <p style="color: var(--muted); margin-top:6px;">
-            Inspired by the original Baldi’s Basics by Mystman12.
-        </p>
     </div>
 </section>
 
 <footer>
-© 2026 Baldi’s Basics: Definitive Mode • Fan Project • Not affiliated with the original creators
+© 2026 Baldi’s Basics: Definitive Mode • Fan Project
 </footer>
-
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-            .scrollIntoView({ behavior: 'smooth' });
-    });
-});
-</script>
 
 </body>
 </html>

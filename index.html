@@ -47,24 +47,39 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* Volume Control */
+/* Music Control */
 .volume-control {
     position: fixed;
     bottom: 15px;
     right: 15px;
     background: var(--card);
     border: 1px solid var(--border);
-    padding: 8px 12px;
+    padding: 10px 12px;
     border-radius: 8px;
     z-index: 1000;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 .volume-control input {
     cursor: pointer;
+}
+
+.volume-control button {
+    background: var(--accent-dark);
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.volume-control button:hover {
+    background: var(--accent);
 }
 
 a {
@@ -218,10 +233,10 @@ footer {
     <source src="BaldiSong.wav" type="audio/wav">
 </audio>
 
-<!-- Volume Slider -->
+<!-- Music Controls -->
 
 <div class="volume-control">
-    <span>🔊</span>
+    <button id="musicToggle">Play Music</button>
     <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
 </div>
 
@@ -271,8 +286,9 @@ footer {
 <script>
 const music = document.getElementById("bgMusic");
 const slider = document.getElementById("volumeSlider");
+const toggleBtn = document.getElementById("musicToggle");
 
-// Set starting volume
+// Starting volume
 music.volume = slider.value;
 
 // Volume control
@@ -280,12 +296,16 @@ slider.addEventListener("input", () => {
     music.volume = slider.value;
 });
 
-// Play music after first user interaction (required for browsers)
-document.addEventListener("click", () => {
+// Play / Pause button
+toggleBtn.addEventListener("click", () => {
     if (music.paused) {
         music.play();
+        toggleBtn.textContent = "Pause Music";
+    } else {
+        music.pause();
+        toggleBtn.textContent = "Play Music";
     }
-}, { once: true });
+});
 </script>
 
 </body>

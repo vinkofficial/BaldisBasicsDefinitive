@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks For Downloading!</title>
+
+<style>
+body {
+    background: #0f1a14;
+    color: #d2f5dc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #7fa891;
+}
+
+.small-text a {
+    color: #2f81f7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.small-text a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<h1>Thanks For Downloading!</h1>
+
+<p class="small-text">
+Download Didn’t Start? 
+<a href="#">Click Here To Download Manually!</a>
+</p>
+
+</body>
+</html>
